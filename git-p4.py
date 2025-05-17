@@ -3447,7 +3447,8 @@ class P4Sync(Command, P4UserMap):
 
     def commit(self, details, files, branch, parent="", allow_empty=False):
         epoch = details["time"]
-        author = details["user"]
+        #author = details["user"]
+        author = self.p4UserId()
         jobs = self.extractJobsFromCommit(details)
 
         if self.verbose:
